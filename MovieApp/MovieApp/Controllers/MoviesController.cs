@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace MovieApp.Controllers
 {
-    [Authorize(Roles = UserRoles.Admin)]
+  //  [Authorize(Roles = UserRoles.Admin)]
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;

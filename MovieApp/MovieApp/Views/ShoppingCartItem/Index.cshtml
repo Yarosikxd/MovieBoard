@@ -1,6 +1,6 @@
-﻿@model IEnumerable<Cinema>
+﻿@model IEnumerable<ShoppingCartItem>
 @{
-    ViewData["Title"] = "List of film studio";
+    ViewData["Title"] = "List of Actots";
 }
 
 <div class="row">
@@ -9,9 +9,8 @@
             <thead>
                 <tr>
 
-                    <th>  @Html.DisplayNameFor(model => model.Logo)</th>
-                    <th>  @Html.DisplayNameFor(model => model.Name)</th>
-                    <th>  @Html.DisplayNameFor(model => model.Description)</th>
+                    <th>  @Html.DisplayNameFor(model => model.Movie)</th>
+                 
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -19,15 +18,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                        
                         <td class="align-middle">
-                            <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width: 150px" />
+                            @Html.DisplayFor(modelItem => item.Movie)
                         </td>
-                        <td class="align-middle">
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td class="align-middle">
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
+                       
 
                         <td class="align-middle">
                             <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
@@ -46,7 +41,7 @@
 </div>
 
 <div style="position : fixed; right: 25px; bottom: 25px;" class="text-white">
-    <a asp-controller="Cinemas" asp-action="Create" class="btn btn-success">
+    <a asp-controller="Actors" asp-action="Create" class="btn btn-success">
         <i class="bi bi-plus-circle"></i> Add new
     </a>
 </div>

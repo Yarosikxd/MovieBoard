@@ -38,6 +38,7 @@ namespace MovieApp
             services.AddScoped<IProducersService, ProducersService>();
             services.AddScoped<IMoviesService, MoviesService>();
             services.AddScoped<IOrdersService, OrdersService>();
+            services.AddScoped<IShoppingCartItemService, ShoppingCartItemService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));

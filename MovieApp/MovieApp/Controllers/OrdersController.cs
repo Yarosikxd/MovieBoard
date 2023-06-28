@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MovieApp.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class OrdersController : Controller
     {
         private readonly IMoviesService _moviesService;
